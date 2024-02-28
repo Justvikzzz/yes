@@ -16,6 +16,8 @@
     <div  >
 
         <img id="slider" src="img/p1.jpg" alt="">
+        <img id="slider" src="img/p2.jpg" alt="">
+        <img id="slider" src="img/p3.jpg" alt="">
 
     </div>
     <button id="sgte" onclick="cambiarimagen()">
@@ -48,5 +50,31 @@ document.getElementById("slider").src="img/p1.jpg";
 
 
 }
+</script>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function(){
+
+        let slider = document.querySelector(".slider");
+        let contador = 1;
+
+        setInterval(()=>{
+
+            contador++;
+
+            if(contador === slider.children.length){
+
+                setTimeout(() => {
+                    
+                    contador = 1;
+                },500);
+            }
+        },3000);
+    });
+
+
+
+
+
 </script>
 </html>
