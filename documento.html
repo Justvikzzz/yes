@@ -2,24 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slider.css">
     <title>Document</title>
 </head>
 <body>
-    
-    <header>
-
-    </header>
     <nav>
 
     </nav>
-    <div  >
+<div class="slider-container">    
+    <div  class="slider">
 
         <img id="slider" src="img/p1.jpg" alt="">
         <img id="slider" src="img/p2.jpg" alt="">
         <img id="slider" src="img/p3.jpg" alt="">
+        <img id="slider" src="img/p4.jpg" alt="">
 
     </div>
+</div>    
     <button id="sgte" onclick="cambiarimagen()">
         cambiar
     </button>
@@ -60,11 +61,17 @@ document.getElementById("slider").src="img/p1.jpg";
 
         setInterval(()=>{
 
+            slider.style.transition = "transform 0.5s ease-in-out"
+            slider.style.transform = `translateX(${-contador*100}%)`;
+
             contador++;
 
             if(contador === slider.children.length){
 
                 setTimeout(() => {
+
+                    slider.style.transition = "none;"
+                    slider.style.transform = 'translateX(0)'
                     
                     contador = 1;
                 },500);
